@@ -26,12 +26,12 @@ class SimpleRewards(Rewards):
     '''
     def __init__(self):
         self.reward_dict = {
-            "another_turn": 0,  # Survived another turn
-            "ate_food": 0,  # Ate a piece of food
-            "won": 0,  # Won the game (e.g., last snake alive)
+            "another_turn": 0.1,  # Survived another turn
+            "ate_food": 1,  # Ate a piece of food
+            "won": 10,  # Won the game (e.g., last snake alive)
             "died": 0,  # Died for any reason (general death event)
-            "ate_another_snake": 0,  # Eliminated another snake by eating its head
-            "hit_wall": 1,  # Collided with a wall
+            "ate_another_snake": 5,  # Eliminated another snake by eating its head
+            "hit_wall": 0,  # Collided with a wall
             "hit_other_snake": 0,  # Own head collided with another snake's body
             "hit_self": 0,  # Own head collided with own body
             "was_eaten": 0,  # Was eaten by a larger snake
