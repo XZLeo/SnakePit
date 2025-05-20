@@ -26,18 +26,18 @@ class SimpleRewards(Rewards):
     '''
     def __init__(self):
         self.reward_dict = {
-            "another_turn": 0,  # Survived another turn
-            "ate_food": 0,  # Ate a piece of food
-            "won": 0,  # Won the game (e.g., last snake alive)
-            "died": 0,  # Died for any reason (general death event)
-            "ate_another_snake": 0,  # Eliminated another snake by eating its head
-            "hit_wall": 1,  # Collided with a wall
-            "hit_other_snake": 0,  # Own head collided with another snake's body
-            "hit_self": 0,  # Own head collided with own body
-            "was_eaten": 0,  # Was eaten by a larger snake
-            "other_snake_hit_body": 0,  # Another snake collided with own snake's body (and died)
-            "forbidden_move": 0,  # Attempted an illegal move (e.g., moving into own neck)
-            "starved": 0  # Died due to health reaching zero
+            "another_turn": 0.01,  # Survived another turn
+            "ate_food": 1,  # Ate a piece of food
+            "won": 5,  # Won the game (e.g., last snake alive)
+            "died": -5,  # Died for any reason (general death event)
+            "ate_another_snake": 2,  # Eliminated another snake by eating its head
+            "hit_wall": -3,  # Collided with a wall
+            "hit_other_snake": -1,  # Own head collided with another snake's body
+            "hit_self": -3,  # Own head collided with own body
+            "was_eaten": -5,  # Was eaten by a larger snake
+            "other_snake_hit_body": 2,  # Another snake collided with own snake's body (and died)
+            "forbidden_move": -0.2,  # Attempted an illegal move (e.g., moving into own neck)
+            "starved": -5  # Died due to health reaching zero
         }
 
     def get_reward(self, name, snake_id, episode):
